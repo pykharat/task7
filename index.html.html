@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .rating input[type="radio"] {
+            margin: 0 5px;
+        }
+        .rating label {
+            font-size: 20px;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Customer Survey</h1>
+    <form action="#" method="POST">
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="First Last" required>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Rating for Experience -->
+        <div class="form-group">
+            <label>Your Experience *</label>
+            <div class="rating">
+                <input type="radio" id="star 1" name="experience" value="1">
+                <label for="star1">&#9733;</label>
+                <input type="radio" id="star 2" name="experience" value="2">
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star 3" name="experience" value="3">
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star 4" name="experience" value="4">
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star 5" name="experience" value="5" checked>
+                <label for="star5">&#9733;</label>
+            </div>
+        </div>
+
+        <!-- Satisfaction Questions -->
+        <div class="form-group">
+            <label>How satisfied are you with *</label>
+            <div class="radio-group">
+                <div>
+                    <label for="purchase">Purchase</label><br>
+                    <input type="radio" id="purchase1" name="purchase" value="Very Unsatisfied">
+                    <label for="purchase1">Very Unsatisfied</label><br>
+                    <input type="radio" id="purchase2" name="purchase" value="Satisfied">
+                    <label for="purchase2">Satisfied</label><br>
+                    <input type="radio" id="purchase3" name="purchase" value="Very Satisfied" checked>
+                    <label for="purchase3">Very Satisfied</label><br>
+                </div>
+                <div>
+                    <label for="service">Service</label><br>
+                    <input type="radio" id="service1" name="service" value="Very Unsatisfied">
+                    <label for="service1">Very Unsatisfied</label><br>
+                    <input type="radio" id="service2" name="service" value="Satisfied">
+                    <label for="service2">Satisfied</label><br>
+                    <input type="radio" id="service3" name="service" value="Very Satisfied" checked>
+                    <label for="service3">Very Satisfied</label><br>
+                </div>
+                <div>
+                    <label for="company">Company Overall</label><br>
+                    <input type="radio" id="company1" name="company" value="Very Unsatisfied">
+                    <label for="company1">Very Unsatisfied</label><br>
+                    <input type="radio" id="company2" name="company" value="Satisfied">
+                    <label for="company2">Satisfied</label><br>
+                    <input type="radio" id="company3" name="company" value="Very Satisfied" checked>
+                    <label for="company3">Very Satisfied</label><br>
+                </div>
+            </div>
+        </div>
+
+        <!-- Likelihood of Recommendations -->
+        <div class="form-group">
+            <label>How likely are you to *</label>
+            <div class="radio-group">
+                <div>
+                    <label for="buy">Buy from us again</label><br>
+                    <input type="radio" id="buy1" name="buy" value="Very Unlikely">
+                    <label for="buy1">Very Unlikely</label><br>
+                    <input type="radio" id="buy2" name="buy" value="Very Likely" checked>
+                    <label for="buy2">Very Likely</label><br>
+                </div>
+                <div>
+                    <label for="recommend">Recommend our product</label><br>
+                    <input type="radio" id="recommend1" name="recommend" value="Very Unlikely">
+                    <label for="recommend1">Very Unlikely</label><br>
+                    <input type="radio" id="recommend2" name="recommend" value="Very Likely" checked>
+                    <label for="recommend2">Very Likely</label><br>
+                </div>
+                <div>
+                    <label for="company">Recommend our company</label><br>
+                    <input type="radio" id="company1" name="company" value="Very Unlikely">
+                    <label for="company1">Very Unlikely</label><br>
+                    <input type="radio" id="company2" name="company" value="Very Likely" checked>
+                    <label for="company2">Very Likely</label><br>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Comments -->
+        <div class="form-group">
+            <label for="comments">Additional comments or suggestions</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Your comments here..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <input type="submit" value="Submit" class="submit-btn">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+ 
+
